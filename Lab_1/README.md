@@ -4,7 +4,8 @@ given by option (25) piecewise-continuous
 function y (x), if it exists or display
 notification of non - existence of function for
 given x.
-![Image alt](https://github.com/{xpadx1}/{ASD_labs}/raw/{main}/{Photos}/image1.png.png)
+
+![Само условие](https://github.com/{xpadx1}/{ASD_labs}/raw/{main}/{Photos}/image1.png.png)
 
 Solve the problem in two ways:
 1) The program is allowed to use
