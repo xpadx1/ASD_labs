@@ -1,10 +1,10 @@
-##First Lab 
+## First Lab 
 Determine the value
 given by option (25) piecewise-continuous
 function y (x), if it exists or display
 notification of non - existence of function for
 given x.
- 
+
 
 Solve the problem in two ways:
 1) The program is allowed to use
