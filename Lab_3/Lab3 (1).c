@@ -1,4 +1,3 @@
-﻿
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
@@ -17,14 +16,14 @@ void gotoXY(int x, int y) {
 
 int main() {
 
-    int n = COLUMN; 
-    int m = ROW; 
-    int p; 
+    int n = COLUMN;
+    int m = ROW;
+    int p;
     int i, j;
     int matrix[ROW][COLUMN] = { 0 };
 
-     for (p = m / 2; p > 0; p--) {
-       
+    for (p = m / 2; p > 0; p--) {
+
         for (j = p; j <= n - p; j++) {
 
             i = p - 1;
@@ -32,7 +31,7 @@ int main() {
             printf("%d", matrix[i][j]);
             Sleep(SLEEP_TIME);
         }
-        
+
         for (i = p - 1; i < m - p + 1; i++) {
 
             j = n - p;
@@ -41,7 +40,7 @@ int main() {
             Sleep(SLEEP_TIME);
         }
 
-        
+
         for (j = n - 1 - p; j >= p - 1; j--) {
 
             i = m - p;
@@ -50,7 +49,7 @@ int main() {
             Sleep(SLEEP_TIME);
         }
 
-        
+
         for (i = m - p; i >= p - 1; i--) {
 
             j = p - 1;
@@ -63,4 +62,3 @@ int main() {
     gotoXY(m, 0);
     return 0;
 }
-
