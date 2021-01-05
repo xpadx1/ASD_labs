@@ -1,55 +1,64 @@
 ﻿#include <stdio.h>
-#include <stdbool.h>
-#define M 9
-#define N 8
+#include <stdlib.h>
+#include <windows.h>
 
-int matrix[M][N] = {
-        { -2, 1, 4, 7, 10, 13, 15, 1 },
-        { -2, 1, 4, 7, 10, 13, 16, 1 },
-        { -2, 1, 4, 7, 10, 13, 16, 1 },
-        { -1, 2, 5, 8, 10, 14, 17, 2 },
-        { -1, 2, 5, 8, 11, 14, 17, 2 },
-        { -1, 2, 5, 8, 12, 14, 17, 2 },
-        {  -1, 3, 6, 9, 12, 15, 18, 2 },
-        {  -1, 3, 6, 9, 12, 15, 18, 2 },
-        {  -1, 3, 6, 9, 12, 15, 18, 2 } };
+#define COLUMN 80
+#define ROW 24
 
+#define SLEEP_TIME 10
 
+void gotoXY(int x, int y) {
+    COORD coord;
+    coord.X = y;
+    coord.Y = x;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
 
-int main(void)
-{
-    for (int R = 0; R < M; R++) {
-        for (int C = 0; C < N; C++) {
-            printf("%d ", matrix[R][C]);
+int main() {
+
+    int n = COLUMN;
+    int m = ROW;
+    int p;
+    int i, j;
+    int matrix[ROW][COLUMN] = { 0 };
+
+    for (p = m / 2; p > 0; p--) {
+
+        for (j = p; j <= n - p; j++) {
+
+            i = p - 1;
+            gotoXY(i, j);
+            printf("%d", matrix[i][j]);
+            Sleep(SLEEP_TIME);
         }
-        printf("\n");
-    }
-    int column = 0;
-    bool flag = true;
-    while (column < N)
-    {
-        int low = 0;
-        int high = M;
-        while (low <= high)
-        {
-            int mid = (high + low) / 2;
 
-            if (matrix[mid][column] <= 5 && matrix[mid][column] >= 0)
-            {
-                printf("\nYour number on coord [%d, %d]\n", mid, column);
-                flag = false;
-                break;
-            }
-            else if (matrix[mid][column] > 5)
-            {
-                high = mid - 1;
-            }
-            else if (matrix[mid][column] < 0)
-            {
-                low = mid + 1;
-            }
+        for (i = p - 1; i < m - p + 1; i++) {
+
+            j = n - p;
+            gotoXY(i, j);
+            printf("%d", matrix[i][j]);
+            Sleep(SLEEP_TIME);
         }
-        column++;
+
+
+        for (j = n - 1 - p; j >= p - 1; j--) {
+
+            i = m - p;
+            gotoXY(i, j);
+            printf("%d", matrix[i][j]);
+            Sleep(SLEEP_TIME);
+        }
+
+
+        for (i = m - p; i >= p - 1; i--) {
+
+            j = p - 1;
+            gotoXY(i, j);
+            printf("%d", matrix[i][j]);
+            Sleep(SLEEP_TIME);
+        }
     }
+
+    gotoXY(m, 0);
     return 0;
 }
