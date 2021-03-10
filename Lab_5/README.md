@@ -7,3 +7,5 @@ calculation of both members of the series, and the amount of recursive return; 3
 use a recursive procedure or function that performs calculations
 members of the series on the recursive descent, and the calculation of the amount on the recursive
 return.
+
+![Само условие](https://github.com/xpadx1/ASD_labs/blob/main/Photos/image4.png)
